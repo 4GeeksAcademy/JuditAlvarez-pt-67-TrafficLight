@@ -1,25 +1,40 @@
 import React, { useState } from "react";
 
-
-//include images into your bundle
-
-
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-		  <div className="trafic-light bg-dark inline-block p-1">
-		  <button type="button" className=" light btn btn-success rounded-circle mx-auto my-2 mt-3"></button>
-		  <button type="button" className="light btn btn-danger rounded-circle mx-auto my-2"></button>
-		  <button type="button" className="light btn btn-warning rounded-circle mx-auto my-2"></button>
-			
+  const [activeColor, setActiveColor] = useState("");
 
-		  </div>
-		</div>
-	);
-	
+  const handleButtonClick = (color) => {
+    setActiveColor(color);
+  };
 
-
+  return (
+    <div className="text-center">
+      <div className="trafic-light bg-dark inline-block p-1">
+        <button
+          type="button"
+          className={`light btn btn-success rounded-circle mx-auto my-2 mt-3 ${
+            activeColor === "green" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("green")}
+        ></button>
+        <button
+          type="button"
+          className={`light btn btn-danger rounded-circle mx-auto my-2 ${
+            activeColor === "red" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("red")}
+        ></button>
+        <button
+          type="button"
+          className={`light btn btn-warning rounded-circle mx-auto my-2 ${
+            activeColor === "yellow" ? "active" : ""
+          }`}
+          onClick={() => handleButtonClick("yellow")}
+        ></button>
+      </div>
+    </div>
+  );
 };
 
 export default Home;
+

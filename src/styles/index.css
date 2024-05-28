@@ -6,3 +6,9 @@
     width: 150px;
     height: 150px;
 }
+.light.active {
+    box-shadow: 0 0 10px 5px rgba(6, 238, 255, 0.5);
+    opacity: 1;
+  }
+  
+  
